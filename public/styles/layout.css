@@ -18,8 +18,38 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: 'Source Sans Pro';
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+/* nav {
+  /* background-color: #33C9FF; 
+  // font-family: 'Bungee', 'sans-serif';
+   /* height: 120px;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+}
+
+/* .tweeter{
+    font-family: 'Bungee';
+    font-size: 50px;
+
+}
+
+.right-title {
+  display: flex;
+  font-family: 'Bungee';
+  flex-direction: column;
+  align-items: center;
+  color: white;
+} */
+
+
+/* .red{  
+  color: red;
+} */ 
