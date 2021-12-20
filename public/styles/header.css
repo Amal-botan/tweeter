@@ -1,0 +1,20 @@
+/*Added css for header class*/
+header{
+  height: 400px;
+  width: 100%;
+  margin-top: 120px;
+  /*flex is used to position properly*/
+  display: flex;
+  align-items: center; 
+  flex-direction: column;
+  justify-content: center;
+  /*Changing backgroun color*/
+  background-color: #b35fa6;
+}
+
+/*positioning and removing space from name and image, 
+also changing text to white*/
+h2{
+  margin: 0;
+  color: white;
+}

@@ -1,9 +1,11 @@
+/*Creating CSS properties for the nav bar at the top of the page */
 nav {
 height: 120px;
 width: 100%;
 background-color: #4056A1;
 color: #FFFFFF;
-position: fixed;
+top: 0; /*to make the nav bar staty at the top*/
+position: fixed; /*overlaying the nav bar*/
 font-family: 'Bungee', 'sans-serif';
 padding: 1.5em;
 display: flex;
@@ -11,6 +13,7 @@ justify-content: space-between;
 align-items: center;
 }
 
+/*Class for the TWEETER word */
 span {
   font-family: "Bungee", sans-serif;
   display: flex;
@@ -18,10 +21,12 @@ span {
   align-items: center;
 }
 
+/*Bolding for the work Write*/
 .bold{
   font-weight: bold;
 }
 
+/*Container for the content on the right of the nav bar*/
 .content-right {
   font-family: 'Source Sans Pro';
   display:flex;
