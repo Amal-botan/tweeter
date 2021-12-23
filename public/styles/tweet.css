@@ -1,0 +1,111 @@
+/*CSS for the textbook and title*/
+#tweet-text {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+  overflow-wrap: break-word;
+  background-color: transparent;
+}
+
+/*Making the question prompt bold*/
+label{
+  font-weight: bold;
+}
+
+/*lining up the tweet button and the number value and spacing it out*/
+.tweetalign{
+  display: flex;
+  justify-content: space-between;
+}
+
+/*Editing the design of the tweet button*/
+.tweetbutton{
+  font-family: "Bungee", sans-serif;
+  color: white;
+  background-color: #4056A1;
+}
+
+/*Making the conter red and bold when it is negative*/
+.countIsNegative {
+  font-weight: bold;
+  color: red;
+}
+
+/*main container for the tweet*/
+#containertweet {
+  margin: auto;
+  margin-top: 50px;
+  max-width: 1000px;
+  padding-bottom: 10px
+}
+
+/*border for the tweet box*/
+.bordertweet {
+  border: solid;
+  /* margin: 3px; */
+}
+
+/*container for the username, photo and name for tweet*/
+.headertweet {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; 
+  /* margin: 20px; */
+  /* margin-left: 10px; */
+  /* margin-right: 10px; */
+  height: 80px;
+  background-color:  #f4f1ec;
+  margin-top: 5px;
+}
+
+/*adding space between photo and user name*/
+.headeruserphoto {
+  width: 50px;
+  margin-left: 20px;
+}
+
+/*font of the username*/
+.headername{
+  font-family: 'Source Sans Pro';
+}
+
+/*placement and font of the username*/
+.headerusername{
+  width: 100%;
+  margin: 20px; 
+  margin-left: 20px;
+  display: flex;
+  justify-content: flex-end;
+  color: #A9A9A9; 
+  font-family: 'Source Sans Pro';
+}
+
+/*placement and font for the tweet itself*/
+.tweetsentence {
+  border-bottom: solid;
+  padding-bottom: 30px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/*container for the tweet time and the icons*/
+.footertweet {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin: 20px;
+  margin-top: 0px;
+}
+
+/*when someone hovers over the icon it becomes orange*/
+.btn:hover {
+  color: orange;
+}
+
+/*when the mouse hovers over the tweet container*/
+.bordertweet:hover {
+  box-shadow: 5px 10px grey;
+}
