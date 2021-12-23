@@ -38,7 +38,7 @@ label{
   margin: auto;
   margin-top: 50px;
   max-width: 1000px;
-  padding-bottom: 10px
+  padding-bottom: 20px
 }
 
 /*border for the tweet box*/
@@ -68,6 +68,7 @@ label{
 
 /*font of the username*/
 .headername{
+  margin-left: 10px;
   font-family: 'Source Sans Pro';
 }
 
