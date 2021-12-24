@@ -68,8 +68,10 @@ const createTweetElement = function(tweet) {
 }
 
 $(document).ready(function() {
+  //add an event listener that listens for the submit event
   $(".tweetsubmit").submit(function(event) {
     event.preventDefault();
+    //Serialize the form data and send it to the server as a query string.
     $.post('/tweets', $(this).serialize());
     renderTweets(data);
   });
