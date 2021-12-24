@@ -68,6 +68,10 @@ const createTweetElement = function(tweet) {
 }
 
 $(document).ready(function() {
-  renderTweets(data);
+  $(".tweetsubmit").submit(function(event) {
+    event.preventDefault();
+    $.post('/tweets', $(this).serialize());
+    renderTweets(data);
+  });
 }); 
   
