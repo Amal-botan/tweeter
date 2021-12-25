@@ -4,32 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-/* Fake data taken from initial-tweets.json */
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
 //This function can be responsible for taking in an array of tweet objects and then appending each one to the #tweets-container.
 const renderTweets = function(tweets) {
    // loops through tweets
@@ -48,7 +22,7 @@ const createTweetElement = function(tweet) {
   let $tweet =
   `<article class = "bordertweet">
     <header class = "headertweet">
-      <img class = "headeruserphoto" src= "https://i.imgur.com/73hZDYK.png"></img>
+      <img class = "headeruserphoto" src= ${tweet.user.avatars}></img>
       <span class="headername">${tweet.user.name}</span>
       <span class="headerusername">${tweet.user.handle}</span>
     </header>
@@ -67,13 +41,21 @@ const createTweetElement = function(tweet) {
 
 }
 
+//efine a function called loadTweets that is responsible for fetching tweets from the http://localhost:8080/tweets page. using Ajax
+function loadTweets() {
+  $.ajax('/tweets', {method: 'GET'})
+  .then(function(data) {
+    renderTweets(data);
+  });
+}
+
 $(document).ready(function() {
   //add an event listener that listens for the submit event
   $(".tweetsubmit").submit(function(event) {
     event.preventDefault();
     //Serialize the form data and send it to the server as a query string.
     $.post('/tweets', $(this).serialize());
-    renderTweets(data);
+    loadTweets();
   });
 }); 
   
