@@ -41,7 +41,7 @@ const createTweetElement = function(tweet) {
 
 }
 
-//efine a function called loadTweets that is responsible for fetching tweets from the http://localhost:8080/tweets page. using Ajax
+// a function called loadTweets that is responsible for fetching tweets from the http://localhost:8080/tweets page. using Ajax
 function loadTweets() {
   $.ajax('/tweets', {method: 'GET'})
   .then(function(data) {
@@ -50,12 +50,24 @@ function loadTweets() {
 }
 
 $(document).ready(function() {
-  //add an event listener that listens for the submit event
-  $(".tweetsubmit").submit(function(event) {
-    event.preventDefault();
-    //Serialize the form data and send it to the server as a query string.
-    $.post('/tweets', $(this).serialize());
-    loadTweets();
-  });
+//upon clicking the tweetbutton
+  $(".tweetbutton").on('click', function(event) {
+    //checking the length of the tweet and giving commands depending on the length
+    if ($("#tweet-text").val().length > 140) {
+      event.preventDefault();
+      alert('Tweets must be less than 140 characters');
+    } else if ($("#tweet-text").val().length === 0) {
+      event.preventDefault();
+      alert('Text feild cannot be empty');
+    } else {
+        //add an event listener that listens for the submit event
+       $(".tweetsubmit").submit(function(event) {
+        event.preventDefault();
+        //Serialize the form data and send it to the server as a query string.
+        $.post('/tweets', $(this).serialize());
+        loadTweets();
+      });
+    }
+  }); 
 }); 
   
