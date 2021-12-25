@@ -59,10 +59,12 @@ $(document).ready(function() {
     event.preventDefault();
     //checking the length of the tweet and giving commands depending on the length
     if ($("#tweet-text").val().length > 140) {
-      alert('Tweets must be less than 140 characters');
+      $(".errormessage").html(`<i class="fa-solid fa-triangle-exclamation"></i> &nbsp Error: Your tweet is over 140 characters! &nbsp <i class="fa-solid fa-triangle-exclamation"></i>`).slideDown().delay(3000).slideUp(500);
     } else if ($("#tweet-text").val().length === 0) {
-      alert('Text feild cannot be empty');
+      $(".errormessage").html(`<i class="fa-solid fa-triangle-exclamation"></i> &nbsp Error: Your tweet can't be empty! &nbsp <i class="fa-solid fa-triangle-exclamation"></i>`).slideDown().delay(3000).slideUp(500);
+      // return;
     } else {
+      $(".errormessage").html(``);
         //add an event listener that listens for the submit event
         //Serialize the form data and send it to the server as a query string.
         $.post('/tweets', $(this).serialize()).then(function() {

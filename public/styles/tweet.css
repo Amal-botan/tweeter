@@ -110,3 +110,8 @@ label{
 .bordertweet:hover {
   box-shadow: 5px 10px grey;
 }
+
+.errormessage{
+  color: red;
+  align-items: center; 
+}
