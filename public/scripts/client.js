@@ -15,7 +15,11 @@ const renderTweets = function(tweets) {
   }
 }
   
-
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 const createTweetElement = function(tweet) {
   /* Your code for creating the tweet element */
@@ -26,7 +30,7 @@ const createTweetElement = function(tweet) {
       <span class="headername">${tweet.user.name}</span>
       <span class="headerusername">${tweet.user.handle}</span>
     </header>
-    <p class="tweetsentence">${tweet.content.text}</p>
+    <p class="tweetsentence">${escape(tweet.content.text)}</p>
     <span class = "tweetline"></span>
     <footer class = "footertweet">
       <a> ${timeago.format(tweet.created_at)} </a>
