@@ -6,16 +6,17 @@
 
 //This function can be responsible for taking in an array of tweet objects and then appending each one to the #tweets-container.
 const renderTweets = function(tweets) {
-   // loops through tweets
+  // loops through tweets
   for (const tweet in tweets) {
     // calls createTweetElement for each tweet
     const tweetdata = createTweetElement(tweets[tweet]);
-      // takes return value and appends it to the tweets container
+    // takes return value and appends it to the tweets container
     $('#containertweet').prepend(tweetdata);
   }
-}
-  
-const escape = function (str) {
+};
+
+//Code for the escape feature to protect the page from inputs that can change the page
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -40,17 +41,17 @@ const createTweetElement = function(tweet) {
         <button class = "btn"><i class="fa-solid fa-heart"></i></button>
       </div>
     </footer>
-  </article>`
+  </article>`;
   return $tweet;
 
-}
+};
 
 // a function called loadTweets that is responsible for fetching tweets from the http://localhost:8080/tweets page. using Ajax
 function loadTweets() {
   $.ajax('/tweets', {method: 'GET'})
-  .then(function(data) {
-    renderTweets(data);
-  });
+    .then(function(data) {
+      renderTweets(data);
+    });
 }
 
 $(document).ready(function() {
@@ -65,18 +66,19 @@ $(document).ready(function() {
       // return;
     } else {
       $(".errormessage").html(``);
-        //add an event listener that listens for the submit event
-        //Serialize the form data and send it to the server as a query string.
-        $.post('/tweets', $(this).serialize()).then(function() {
-          //calling ajax to get the last submission
-            $.ajax('/tweets', {method: 'GET'}).then(function(data) {
-              //getting the last tweet
-                const tweetdata = createTweetElement(data[data.length-1]);
-                $('#containertweet').prepend(tweetdata);
-          });
+      //add an event listener that listens for the submit event
+      //Serialize the form data and send it to the server as a query string.
+      $.post('/tweets', $(this).serialize()).then(function() {
+        $("#tweet-text").val(null);
+        //calling ajax to get the last submission
+        $.ajax('/tweets', {method: 'GET'}).then(function(data) {
+          //getting the last tweet
+          const tweetdata = createTweetElement(data[data.length - 1]);
+          $('#containertweet').prepend(tweetdata);
         });
+      });
     }
-  }); 
-}); 
+  });
+});
 //loading all of the tweets at the front of the page
 loadTweets();

@@ -62,7 +62,7 @@ label{
 
 /*adding space between photo and user name*/
 .headeruserphoto {
-  width: 50px;
+  /* width: 50px; */
   margin-left: 20px;
 }
 
@@ -111,6 +111,7 @@ label{
   box-shadow: 5px 10px grey;
 }
 
+/*CSS for the error message when user inputs wrong*/
 .errormessage{
   color: red;
   align-items: center; 

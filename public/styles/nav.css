@@ -34,3 +34,10 @@ span {
   flex-direction: column;
 }
 
+/*CSS for the arrow button under thw "Wrtie a new tweet section"*/
+.arrowbutton{
+  color: red;
+  padding: 0;
+  border: none;
+  background: none;
+}

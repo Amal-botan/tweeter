@@ -1,0 +1,25 @@
+/*Adding responsive design for desktop mode*/
+@media only screen and (min-width: 1024px) {
+  /*Changing the main container*/
+  main{
+   width: 50%;
+   margin-top: 160px;
+ 
+ }
+ 
+ /*Changes for the avatar and user block*/
+ .user{
+     display: flex;
+     width: 30%;
+     height: 400px;
+     margin: auto;
+     margin-top: 200px;
+ }
+ 
+ /*Changes for the body*/
+ body{
+   display: flex;
+ }
+ 
+ }
+
